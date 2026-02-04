@@ -27,6 +27,15 @@ sh <(curl -L https://nixos.org/nix/install)
 
 After installation, restart your terminal.
 
+## Getting Started
+
+Clone this repository to your local machine:
+
+```bash
+git clone https://github.com/mattfors/nix-config.git
+cd nix-config
+```
+
 ## Usage
 
 ### Enter the development environment:
