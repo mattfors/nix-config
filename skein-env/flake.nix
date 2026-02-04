@@ -19,11 +19,11 @@
 
             # Development tools
             nodejs
-            docker
+            docker  # Note: Docker CLI only, daemon must be installed separately
             kubectl
             maven
             jdk
-            vscode
+            vscode  # Note: GUI application, may not work in headless environments
 
             # Common utilities
             curl
@@ -36,7 +36,7 @@
             echo "  - git: $(git --version)"
             echo "  - node: $(node --version)"
             echo "  - docker: $(docker --version 2>/dev/null || echo 'docker daemon not running')"
-            echo "  - kubectl: $(kubectl version --client --short 2>/dev/null || echo 'kubectl installed')"
+            echo "  - kubectl: $(kubectl version --client 2>/dev/null | head -n1 || echo 'kubectl installed')"
             echo "  - maven: $(mvn --version | head -n1)"
             echo "  - java: $(java -version 2>&1 | head -n1)"
             echo "  - vscode: $(code --version | head -n1)"

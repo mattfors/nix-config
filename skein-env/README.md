@@ -10,12 +10,14 @@ Skein-env provides a reproducible development environment with common developmen
 
 - **git**: Version control system
 - **nodejs**: JavaScript runtime
-- **docker**: Container platform
+- **docker**: Container platform CLI (requires Docker daemon installed separately)
 - **kubectl**: Kubernetes command-line tool
 - **maven**: Build automation tool for Java
 - **jdk**: Java Development Kit
-- **vscode**: Visual Studio Code editor
+- **vscode**: Visual Studio Code editor (GUI application)
 - **curl/wget**: HTTP utilities
+
+**Note**: Docker daemon and VSCode require separate installation on your system. The flake provides the CLI tools only.
 
 ## Prerequisites
 
