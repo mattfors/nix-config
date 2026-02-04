@@ -36,10 +36,10 @@
             echo "  - git: $(git --version)"
             echo "  - node: $(node --version)"
             echo "  - docker: $(docker --version 2>/dev/null || echo 'docker daemon not running')"
-            echo "  - kubectl: $(kubectl version --client 2>/dev/null | head -n1 || echo 'kubectl installed')"
+            echo "  - kubectl: $(kubectl version --client=true 2>/dev/null | head -n1 || echo 'kubectl installed')"
             echo "  - maven: $(mvn --version | head -n1)"
             echo "  - java: $(java -version 2>&1 | head -n1)"
-            echo "  - vscode: $(code --version | head -n1)"
+            echo "  - vscode: $(code --version 2>/dev/null | head -n1 || echo 'vscode available in environment')"
             echo ""
             echo "Environment ready for development!"
           '';
