@@ -7,7 +7,7 @@ A reproducible development environment using Nix that works on both Linux and ma
 This environment provides:
 - **git**: Version control system
 - **node**: Node.js runtime and npm
-- **vscode**: Visual Studio Code editor
+- **vscode**: Visual Studio Code editor (requires a graphical environment)
 
 ## Prerequisites
 
