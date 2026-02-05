@@ -36,7 +36,6 @@
             '';
           };
 
-          # Python + Jupyter shell
           python = pkgs.mkShell {
             buildInputs = with pkgs; [
               python312
@@ -53,6 +52,18 @@
               echo "  - jupyter lab: $(jupyter lab --version)"
               echo "  - node: $(node --version)"
             '';
+          };
+        };
+
+        apps = {
+          x86_64-linux = {
+            all-desktop-apps = pkgs.stdenv.mkDerivation {
+              name = "all-desktop-apps";
+              buildInputs = [
+                pkgs.google-chrome
+                pkgs.slack
+              ];
+            };
           };
         };
       }
