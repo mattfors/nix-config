@@ -22,6 +22,7 @@
             git
             nodejs
             vscode
+            obsidian
           ];
 
           shellHook = ''
@@ -30,6 +31,7 @@
             echo "  - git: $(git --version)"
             echo "  - node: $(node --version)"
             echo "  - vscode: vscode available as 'code' command"
+            echo "  - obsidian: obsidian"
           '';
         };
       }
