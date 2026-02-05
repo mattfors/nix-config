@@ -42,6 +42,7 @@
               python312
               python312Packages.jupyterlab
               poetry
+              nodejs
             ];
 
             shellHook = ''
@@ -50,6 +51,7 @@
               echo "  - python: $(python --version)"
               echo "  - poetry: $(poetry --version)"
               echo "  - jupyter lab: $(jupyter lab --version)"
+              echo "  - node: $(node --version)"
             '';
           };
         };
