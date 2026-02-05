@@ -1,5 +1,5 @@
 {
-  description = "Development environment with git, node, and vscode";
+  description = "Development environment with git, node, vscode, and Python/Jupyter";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -17,22 +17,41 @@
         };
       in
       {
-        devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            git
-            nodejs
-            vscode
-            obsidian
-          ];
+        devShells = {
+          default = pkgs.mkShell {
+            buildInputs = with pkgs; [
+              git
+              nodejs
+              vscode
+              obsidian
+            ];
 
-          shellHook = ''
-            echo "Development environment loaded!"
-            echo "Available tools:"
-            echo "  - git: $(git --version)"
-            echo "  - node: $(node --version)"
-            echo "  - vscode: vscode available as 'code' command"
-            echo "  - obsidian: obsidian"
-          '';
+            shellHook = ''
+              echo "Development environment loaded!"
+              echo "Available tools:"
+              echo "  - git: $(git --version)"
+              echo "  - node: $(node --version)"
+              echo "  - vscode: code"
+              echo "  - obsidian: obsidian"
+            '';
+          };
+
+          # Python + Jupyter shell
+          python = pkgs.mkShell {
+            buildInputs = with pkgs; [
+              python312
+              python312Packages.jupyterlab
+              poetry
+            ];
+
+            shellHook = ''
+              echo "🐍 Python/Jupyter shell loaded"
+              echo "Available tools:"
+              echo "  - python: $(python --version)"
+              echo "  - poetry: $(poetry --version)"
+              echo "  - jupyter lab: $(jupyter lab --version)"
+            '';
+          };
         };
       }
     );
