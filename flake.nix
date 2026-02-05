@@ -54,18 +54,6 @@
             '';
           };
         };
-
-        apps = {
-          x86_64-linux = {
-            all-desktop-apps = pkgs.stdenv.mkDerivation {
-              name = "all-desktop-apps";
-              buildInputs = [
-                pkgs.google-chrome
-                pkgs.slack
-              ];
-            };
-          };
-        };
       }
     );
 }
